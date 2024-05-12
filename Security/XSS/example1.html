@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas Example</title>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="500" height="200"></canvas>
+
+    <script>
+      var canvas = document.getElementById("myCanvas");
+      var ctx = canvas.getContext("2d");
+
+      // Draw a red rectangle
+      ctx.fillStyle = "red";
+      ctx.fillRect(50, 50, 100, 100);
+
+      // Draw text
+      ctx.font = "20px Arial";
+      ctx.fillStyle = "blue";
+      ctx.fillText("Hello, Canvas!", 60, 140);
+    </script>
+  </body>
+</html>
