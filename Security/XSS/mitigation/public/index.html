@@ -1,0 +1,24 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="http://unsecure.com/abc.js"></script>
+    <!-- here, I dont want to execute this script, so we set CSP header in server -->
+
+    <script nonce="randomKey">
+      console.log("My Trusted code");
+    </script>
+
+    <!-- We need to add script nonces to distinguish between trusted and untrusted scripts -->
+    <script>
+      console.log("Some Untrusted code");
+    </script>
+  </head>
+  <body>
+    <h1>Page for CORS demo</h1>
+    <image
+      src="https://media.licdn.com/dms/image/D4D03AQEi6YDuqXZRHQ/profile-displayphoto-shrink_400_400/0/1704271478840?e=1721260800&v=beta&t=GYIILzYe57r2sD3gL-GOpFxnclzubfXMvX5h5-2JpGM"
+    />
+  </body>
+</html>
