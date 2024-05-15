@@ -1,0 +1,24 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Theft demonstration in iframe</title>
+  </head>
+
+  <script>
+    function setCookies(name, value, days) {
+      const date = new Date();
+      date.setTime(date.getTime() + days * 24 * 60 * 60);
+      const expires = "expires=" + date.toUTCString();
+      document.cookie = name + "=" + value + ";" + expires;
+    }
+
+    setCookies("parent-cookie", "secret", 1);
+  </script>
+
+  <body>
+    <h1>Data Theft via Javascript</h1>
+
+    <iframe src="http://localhost:5011/iframe-website2" id=""></iframe>
+  </body>
+</html>
