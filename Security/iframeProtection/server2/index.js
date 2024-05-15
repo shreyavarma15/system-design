@@ -1,9 +1,21 @@
 //Child window iframe
 
 const express = require("express");
+const app = express();
+
+app.use((req, res, next) => {
+  res.setHeader("Content-Security-Policy", "frame-ancestors 'none'");
+
+  res.cookie("sessionId", "12345", {
+    httpOnly: true,
+    secure: true,
+    sameSite: "strict",
+  });
+
+  next();
+});
 
 const PORT = 5011;
-const app = express();
 
 app.use(express.static("public"));
 
