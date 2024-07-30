@@ -56,17 +56,14 @@
       }
     </style>
   </head>
-
   <body>
     <ul id="messages"></ul>
     <form id="form" action="">
-      <input id="input" autocomplete="off" />
-      <button>Send</button>
+      <input id="input" autocomplete="off" /><button>Send</button>
     </form>
-
     <script src="/socket.io/socket.io.js"></script>
     <script>
-      const socket = window.io;
+      const socket = window.io();
       const form = document.getElementById("form");
       const input = document.getElementById("input");
       const messages = document.getElementById("messages");
