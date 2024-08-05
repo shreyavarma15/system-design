@@ -19,7 +19,6 @@ const data = [
 
 function sortingDataFn() {
   let sortedData = data.sort((a, b) => a.age - b.age);
-  console.log(sortedData);
   return sortedData;
 }
 
